@@ -1,7 +1,11 @@
 package hello.hellospring.service;
 
 import hello.hellospring.controller.Member;
+import hello.hellospring.repository.MemberRepository;
+import hello.hellospring.repository.MemoryMomberRepository;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -9,13 +13,24 @@ import static org.assertj.core.api.Assertions.fail;
 
 class MemberServiceTest {
 
-    MemberService memberService = new MemberService();
+    MemberService memberService;
+    MemoryMomberRepository memberRepository;
+
+    @BeforeEach
+    public void beforeEach(){
+        memberRepository = new MemoryMomberRepository();
+        memberService = new MemberService(memberRepository);
+    }
+    @AfterEach
+    public void afterEach(){
+        memberRepository.clearStore();
+    }
 
     @Test
     void join() {
         // given
         Member member = new Member();
-        member.setName("hello");
+        member.setName("spring1");
         // when
         Long saveId = memberService.join(member);
 
