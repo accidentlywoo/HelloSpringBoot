@@ -1,0 +1,22 @@
+<html xmlns:th="http://www/thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>
+        스프링 컨테이너에서 컨트롤러에 mapping된 url을 우선으로 찾고,
+        resource > static 을 찾는다! welcome page였던, index.html의 우선순위는 밀렸다.
+    </p>
+    <div class="container">
+        <div>
+            <h1>Hello Spring</h1>
+            <p>회원 기능</p>
+            <p>
+                <a href="/members/new">회원 가입</a>
+                <a href="/members">회원 목록</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
