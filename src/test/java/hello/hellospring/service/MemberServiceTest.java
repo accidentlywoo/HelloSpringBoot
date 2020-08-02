@@ -1,6 +1,7 @@
 package hello.hellospring.service;
 
 import hello.hellospring.controller.Member;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -33,12 +34,14 @@ class MemberServiceTest {
         member2.setName("spring1");
         //when
         memberService.join(member1);
-        try {
-            memberService.join(member2);
-            fail("예외가 발생해야 합니다. ");
-        }catch (IllegalStateException e){
-            assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
-        }
+        IllegalStateException e = Assertions.assertThrows(IllegalStateException.class, () -> memberService.join(member2));
+        assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
+//        try {
+//            memberService.join(member2);
+//            fail("예외가 발생해야 합니다. ");
+//        }catch (IllegalStateException e){
+//            assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
+//        }
 
 
         //then
