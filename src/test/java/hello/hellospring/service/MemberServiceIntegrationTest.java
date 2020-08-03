@@ -1,6 +1,6 @@
 package hello.hellospring.service;
 
-import hello.hellospring.controller.Member;
+import hello.hellospring.data.Member;
 import hello.hellospring.repository.MemberRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
