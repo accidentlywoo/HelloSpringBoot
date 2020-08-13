@@ -37,3 +37,9 @@ out/
 /settings.gradle
 /gradlew
 /gradle/wrapper/gradle-wrapper.jar
+
+## Gradle IntelliJ
+caches/
+daemon/
+native/
+wrapper/
