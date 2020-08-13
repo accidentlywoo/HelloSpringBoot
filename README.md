@@ -13,7 +13,8 @@ sdk install gradle 6.6
 ```
 brew install gradle
 ```
-window 는 zip을 설치
+- window 는 zip을 설치
+
 [gradle 6.6 zip Complete, with docs and sources](https://gradle.org/next-steps/?version=6.6&format=all)
 
 - 공식 홈페이지
