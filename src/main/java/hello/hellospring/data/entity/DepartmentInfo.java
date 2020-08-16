@@ -12,4 +12,11 @@ public class DepartmentInfo {
     private String id;
     @Column(name = "department_name")
     private String name;
+
+    public DepartmentInfo() {
+    }
+    public void setDepartmentInfo(String id, String name) {
+        this.id = id;
+        this.name =name;
+    }
 }

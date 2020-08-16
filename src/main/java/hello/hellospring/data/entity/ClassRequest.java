@@ -2,16 +2,17 @@ package hello.hellospring.data.entity;
 
 import lombok.Getter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 @Getter
 public class ClassRequest {
-    @Id @OneToOne
-    private ClassInfo id;
-    @Id @OneToOne
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id; // Id 필드 추가
+    @OneToOne
+    @JoinColumn(insertable = false, updatable = false)
+    private ClassInfo class_id;
+    @OneToOne
+    @JoinColumn(insertable = false, updatable = false)
     private StudentInfo studentInfo;
 }
